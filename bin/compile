@@ -86,6 +86,8 @@ cd $build_dir
 #prompt npm version
 status "npm version: "
 npm -v
+status "Told npm to use known registrars"
+npm config set ca ""
 
 is_gruntfile_present= [ -f $build_dir/grunt.js ] || [ -f $build_dir/Gruntfile.js ] || [ -f $build_dir/Gruntfile.coffee ];
 if $is_gruntfile_present; then
