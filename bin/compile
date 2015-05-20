@@ -21,11 +21,11 @@ trap cat_npm_debug_log ERR
 status "Installing Sass"
 export GEM_HOME=$build_dir/.gem/ruby/1.9.1
 PATH="$GEM_HOME/bin:$PATH"
-
+rm -rf $cache_dir/ruby/.gem
+HOME=$build_dir gem uninstall sass --user-install
 if test -d $cache_dir/ruby/.gem; then
   status "Restoring ruby gems directory from cache"
   cp -r $cache_dir/ruby/.gem $build_dir
-  HOME=$build_dir gem uninstall sass --user-install
   HOME=$build_dir gem install sass -v 3.4.6 --user-install --no-rdoc --no-ri
 else
   HOME=$build_dir gem install sass -v 3.4.6 --user-install --no-rdoc --no-ri
