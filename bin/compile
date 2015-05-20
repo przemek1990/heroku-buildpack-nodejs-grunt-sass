@@ -28,7 +28,8 @@ if test -d $cache_dir/ruby/.gem; then
 else
   HOME=$build_dir gem install sass -v 3.4.6 --user-install --no-rdoc --no-ri
 fi
-status "Saas versiob"
+status "Sass version"
+echo "Sass version"
 sass -version
 
 # cache ruby gems sass
