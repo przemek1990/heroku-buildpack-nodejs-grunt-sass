@@ -25,7 +25,6 @@ gem uninstall  sass -v '>3.4.6' --force
 if test -d $cache_dir/ruby/.gem; then
   status "Restoring ruby gems directory from cache"
   cp -r $cache_dir/ruby/.gem $build_dir
-  HOME=$build_dir gem update sass --user-install --no-rdoc --no-ri
 else
   HOME=$build_dir gem install sass -v 3.4.6 --user-install --no-rdoc --no-ri
 fi
